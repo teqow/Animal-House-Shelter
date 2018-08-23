@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace src.Models
+namespace Animal_House_Shelter.Models
 {
-    public class Cats
+    public class DbInitializerCats
     {
-        //need to think about property
+        //TODO
     }
 }

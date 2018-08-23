@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace Animal_House_Shelter.Models
 {
-    public class Dogs
+    public interface ICatRepository
     {
-        //need to think about property
+        IQueryable<Cat> Cats { get; }
 
+        void SaveCat(Cat cat);
+
+        Cat DeleteCat(int catID);
     }
 }
