@@ -28,6 +28,9 @@ namespace Animal_House_Shelter
                 options.UseSqlServer(
                     Configuration["ConnectionStrings:DefaultConnection"]));
 
+            services.AddTransient<IDogRepository, DogRepository>();
+            services.AddTransient<ICatRepository, CatRepository>();
+
             services.AddMvc();
         }
 
@@ -49,6 +52,8 @@ namespace Animal_House_Shelter
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInitializerDogs.Seed(app);
+            DbInitializerCats.Seed(app);
         }
     }
 }
