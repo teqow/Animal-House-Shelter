@@ -1,0 +1,56 @@
+﻿@model DogsViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/css/style.css">
+</head>
+<body>
+
+<section class="my-section-jumbotron-dogs">
+    <div class="jumbotron jumbotron-fluid my-jumbotron-dogs d-flex align-items-center">
+        <div class="container text-center ">
+            <h1 class="display-4 text-uppercase my-jumbotron-text my-4">Adopt or Foster a Dog or Puppy </h1>
+        </div>
+    </div>
+</section>
+
+<section class="my-section-text">
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>ASDAS</h2>
+            </div>
+            <div class="col-lg-6">
+                <h2>asdsadasdsadasd</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-section-list-dogs">
+    @foreach (var item in Model.Dogs)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="thumbnail">
+                    <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+                        <h3 >@item.Name</h3>
+                        <h3>
+                           <img src="@item.ImgUrl "/> 
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</section>
+</body>
+</html>
