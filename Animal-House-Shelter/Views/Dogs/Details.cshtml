@@ -1,0 +1,18 @@
+﻿@model Dog
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-lg-6 text-center">
+            <h2>@Model.Name</h2>
+            <img alt="@Model.Name" src="@Model.ImgUrl">
+        </div>
+        <div class=" col-lg-5 mx-auto">
+            <h3>Age @Model.Age</h3>
+            <h4>Breed @Model.Breed</h4>
+            <h4>Gender @Model.Gender</h4>
+            <h4>Weight @Model.Weight</h4>
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>
+

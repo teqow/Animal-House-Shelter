@@ -50,5 +50,10 @@ namespace Animal_House_Shelter.Models
 
             return dbEntry;
         }
+
+        public Cat GetCatByID(int catID)
+        {
+            return _applicationDbContext.Cats.FirstOrDefault(c => c.CatID == catID);
+        }
     }
 }

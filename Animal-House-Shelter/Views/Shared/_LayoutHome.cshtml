@@ -10,7 +10,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <span class="navbar-brand h1">Animal House Shelter</span>
+                <span class="navbar-brand h1"><a asp-controller="Home" asp-action="Index">Animal House Shelter</a></span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                 <h3 class="text-white">Animal House Shelter is a no-kill shelter that rescues and cares for homeless pets.</h3>
                 <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Find my Dog!" onclick="window.location = '@Url.Action("List", "Dogs")'" />
                 <h4 class="text-white">Or</h4>
-                <button class="btn button1 btn-lg btn-warning my-2">Find my Cat!</button>
+                <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Find my Cat!" onclick="window.location = '@Url.Action("List", "Cats")'" />
             </div>
         </div>
     </section>

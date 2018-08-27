@@ -52,6 +52,9 @@ namespace Animal_House_Shelter.Models
             return dbEntry;
         }
 
-       
+        public Dog GetDogByID(int dogID)
+        {
+            return _applicationDbContext.Dogs.FirstOrDefault(d => d.DogID == dogID);
+        }
     }
 }

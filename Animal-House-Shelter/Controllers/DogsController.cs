@@ -29,6 +29,15 @@ namespace Animal_House_Shelter.Controllers
             return View(dogsViewModel);
         }
 
-        //TODO : DETAILS
+        public IActionResult Details(int id)
+        {
+            var dog = _dogRepository.GetDogByID(id);
+            if (dog == null)
+                return NotFound();
+
+
+            return View(dog);
+        }
+
     }
 }

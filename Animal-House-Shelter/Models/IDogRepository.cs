@@ -9,6 +9,8 @@ namespace Animal_House_Shelter.Models
     {
         IQueryable<Dog> Dogs { get; }
 
+        Dog GetDogByID(int dogID);
+
         void SaveDog(Dog dog);
 
         Dog DeleteDog(int dogID);

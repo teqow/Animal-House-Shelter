@@ -24,11 +24,9 @@
 <section class="my-section-text">
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-2">
                 <h2>ASDAS</h2>
-            </div>
-            <div class="col-lg-6">
-                <h2>asdsadasdsadasd</h2>
+                <h3>asdsadasdsadasd</h3>
             </div>
         </div>
     </div>
@@ -41,7 +39,9 @@
             <div class="row">
                 <div class="thumbnail">
                     <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-                        <h3 >@item.Name</h3>
+                        <h3>
+                            <a asp-controller="Dogs" asp-action="Details" asp-route-id="@item.DogID">@item.Name</a>
+                        </h3>
                         <h3>
                            <img src="@item.ImgUrl "/> 
                         </h3>
