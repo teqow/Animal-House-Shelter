@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimalHouseShelter.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180823182651_InitialMigration")]
+    [Migration("20180828122206_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

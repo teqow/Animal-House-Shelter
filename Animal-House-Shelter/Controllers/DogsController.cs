@@ -5,28 +5,33 @@ using System.Threading.Tasks;
 using Animal_House_Shelter.Models;
 using Animal_House_Shelter.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using PagedList;
 
 namespace Animal_House_Shelter.Controllers
 {
     public class DogsController : Controller
     {
         private readonly IDogRepository _dogRepository;
+        public int PageSize = 4;
 
         public DogsController(IDogRepository dogRepository)
         {
             _dogRepository = dogRepository;
         }
 
-        public IActionResult List()
+        public IActionResult List(int dogsPage = 1)
         {
-            var dogs = _dogRepository.Dogs.OrderBy(d => d.Name);
-
-            var dogsViewModel = new DogsViewModel
+            return View(new DogsViewModel
             {
-                Dogs = dogs.ToList()
-            };
+                Dogs = _dogRepository.Dogs.OrderBy(d => d.DogID).Skip((dogsPage - 1) * PageSize).Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = dogsPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = _dogRepository.Dogs.Count()
+                }
+            });
 
-            return View(dogsViewModel);
         }
 
         public IActionResult Details(int id)
@@ -38,6 +43,5 @@ namespace Animal_House_Shelter.Controllers
 
             return View(dog);
         }
-
     }
 }

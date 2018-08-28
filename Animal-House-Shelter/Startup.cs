@@ -49,6 +49,11 @@ namespace Animal_House_Shelter
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "pagination",
+                    template: "Dogs/List/Page{dogsPage}",
+                    defaults: new {Controller = "Dogs", action = "List"});
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });

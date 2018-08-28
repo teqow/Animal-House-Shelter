@@ -9,5 +9,6 @@ namespace Animal_House_Shelter.ViewModels
     public class DogsViewModel
     {
         public IEnumerable<Dog> Dogs { get; set; }
+        public PagingInfo PagingInfo { get; set; }
     }
 }
