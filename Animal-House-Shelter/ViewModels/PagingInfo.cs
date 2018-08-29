@@ -14,5 +14,5 @@ namespace Animal_House_Shelter.ViewModels
 
         public int TotalPages =>
             (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);
-    }
+}
 }

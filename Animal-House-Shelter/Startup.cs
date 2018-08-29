@@ -30,6 +30,7 @@ namespace Animal_House_Shelter
 
             services.AddTransient<IDogRepository, DogRepository>();
             services.AddTransient<ICatRepository, CatRepository>();
+            services.AddTransient<IAdoptionRepository, AdoptionRepository>();
 
             services.AddMvc();
         }

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Animal_House_Shelter.Infrastructure;
 using Animal_House_Shelter.Models;
 using Animal_House_Shelter.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using PagedList;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animal_House_Shelter.Controllers
 {
@@ -20,8 +21,7 @@ namespace Animal_House_Shelter.Controllers
         }
 
         public IActionResult List(int dogsPage = 1)
-        {
-            return View(new DogsViewModel
+            => View(new DogsViewModel
             {
                 Dogs = _dogRepository.Dogs.OrderBy(d => d.DogID).Skip((dogsPage - 1) * PageSize).Take(PageSize),
                 PagingInfo = new PagingInfo
@@ -32,7 +32,6 @@ namespace Animal_House_Shelter.Controllers
                 }
             });
 
-        }
 
         public IActionResult Details(int id)
         {
