@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Animal_House_Shelter.Models
 {
-    public class Adoption
+    public class Volunteer
     {
         [BindNever]
-        public int AdoptionID { get; set; }
+        public int VolunteerID { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "This is a required field.")]
@@ -41,10 +41,7 @@ namespace Animal_House_Shelter.Models
         public string City { get; set; }
 
         [Required]
-        [StringLength(5000, ErrorMessage = "Your message is required"), Display(Name = "Tell me about You? Do You have pet? How big is Your house?")]
+        [StringLength(5000, ErrorMessage = "Your message is required")]
         public string Message { get; set; }
-
-        public bool ContactMe { get; set; }
-
     }
 }

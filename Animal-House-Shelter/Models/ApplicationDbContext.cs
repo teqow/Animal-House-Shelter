@@ -14,5 +14,6 @@ namespace Animal_House_Shelter.Models
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Cat> Cats { get; set; }
         public DbSet<Adoption> Adoptions { get; set; }
+        public DbSet<Volunteer> Volunteers { get; set; }
     }
 }
