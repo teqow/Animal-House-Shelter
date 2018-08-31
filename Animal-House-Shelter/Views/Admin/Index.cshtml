@@ -1,0 +1,13 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+
+
+<div class="container text-center ">
+    <h1 class="display-4 text-uppercase my-jumbotron-text my-4">Administration</h1>
+    <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Change Dogs List" onclick="window.location = '@Url.Action("DogsList", "Admin")'" />
+    <h4 class="text-black-50">Or</h4>
+    <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Change Cats List" onclick="window.location = '@Url.Action("CatsList", "Admin")'" />
+</div>
