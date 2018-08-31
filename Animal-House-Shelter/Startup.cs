@@ -7,6 +7,7 @@ using Animal_House_Shelter.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +37,12 @@ namespace Animal_House_Shelter
             services.AddTransient<IAdoptionRepository, AdoptionRepository>();
             services.AddTransient<IVolunteerRepository, VolunteerRepository>();
 
+            services.AddDbContext<ApplicationIdentityDbContext>(options =>
+                options.UseSqlServer(Configuration["AnimalHouseShelterIdentity:DefaultConnection"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddMvc();
 
             services.AddSingleton<EmailSender>();
@@ -50,7 +57,8 @@ namespace Animal_House_Shelter
                 app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseDeveloperExceptionPage();
+            app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseAuthentication();
 
@@ -68,6 +76,7 @@ namespace Animal_House_Shelter
             });
             DbInitializerDogs.Seed(app);
             DbInitializerCats.Seed(app);
+            IdentitySeedData.Seed(app);
         }
     }
 }
