@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Dog>
 
 @{
-    Layout = "_Layout";
+    Layout = "_AdminLayout";
 }
 
 <table class="table table-striped table-bordered table-sm" >
@@ -35,4 +35,6 @@
 
 <div class="text-center">
     <a asp-action="CreateDogs" class="btn btn-primary">Add new Dog</a>
+    <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Generate Report about Dogs" onclick="window.location = '@Url.Action("DogsReport", "Report")'" />
 </div>
+

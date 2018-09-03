@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Animal_House_Shelter.Infrastructure;
 using Animal_House_Shelter.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -115,6 +117,5 @@ namespace Animal_House_Shelter.Controllers
 
             return RedirectToAction("CatsList");
         }
-
     }
 }

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Cat>
 
 @{
-    Layout = "_Layout";
+    Layout = "_AdminLayout";
 }
 
-<table class="table table-striped table-bordered table-sm" >
+<table class="table table-striped table-bordered table-sm">
     <tr>
         <th class="text-center">CatID</th>
         <th class="text-center">Name</th>
@@ -35,4 +35,5 @@
 
 <div class="text-center">
     <a asp-action="CreateCats" class="btn btn-primary">Add new Cat</a>
+    <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Generate Report about Cats" onclick="window.location = '@Url.Action("CatsReport", "Report")'" />
 </div>
