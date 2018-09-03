@@ -1,0 +1,48 @@
+﻿@model Dog
+
+@{
+    Layout = "_Layout";
+}
+
+<form asp-action="EditDogs" method="post">
+    <input type="hidden" asp-for="DogID" />
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Breed">Breed</label>
+        <div><span asp-validation-for="Breed" class="text-danger"></span></div>
+        <textarea asp-for="Breed" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age">Age</label>
+        <div><span asp-validation-for="Age" class="text-danger"></span></div>
+        <input asp-for="Age" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight">Weight</label>
+        <div><span asp-validation-for="Weight" class="text-danger"></span></div>
+        <input asp-for="Weight" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender">Gender</label>
+        <div><span asp-validation-for="Gender" class="text-danger"></span></div>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <div><span asp-validation-for="Description" class="text-danger"></span></div>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a asp-action="DogsList" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success mt-1">@TempData["message"]</div>
+}
