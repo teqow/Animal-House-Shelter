@@ -4,12 +4,14 @@
 Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstrap, Jquery.
 
 ## TODO:
-- More ideas about app.
 - Correct front
-
 
 ## Done List:
 - Add Controllers/Models/Views/DB
 - Identity
-- Administration
-- Generating a Report about status shelter 
+- Administration - add/edit/delete dogs and cats in my db
+- Generating a Report about status shelter via Rotativa 
+- Volunteer application form
+- Adoption application form
+- Contact view with EmailSender
+- Dogs and Cats from db 

@@ -1,62 +1,83 @@
 ﻿@model Volunteer
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-lg-6">
-            <form asp-action="Index" method="post" class="form-horizontal" role="form">
+@{
+    Layout = "_Layout";
+}
+<head>
+    <link rel="stylesheet" href="lib/css/style.css">
+</head>
 
-                <div asp-validation-summary="All" class="text-danger"></div>
-
-                <div class="form-group">
-                    <label asp-for="FirstName" class="col-sm-12 col-lg-6 control-label"></label>
-                        <input asp-for="FirstName" class="form-control" />
-                        <span asp-validation-for="FirstName" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="LastName" class="col-sm-12 col-lg-6 control-label"></label>
-                    <input asp-for="LastName" class="form-control" />
-                    <span asp-validation-for="LastName" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Email" class="col-sm-12 col-lg-6 control-label"></label>
-                        <textarea asp-for="Email" class="form-control"></textarea>
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Phone" class="col-sm-12 col-lg-6 control-label"></label>
-                        <textarea asp-for="Phone" class="form-control"></textarea>
-                        <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Address" class="col-sm-12 col-lg-6 control-label"></label>
-                        <textarea asp-for="Address" class="form-control"></textarea>
-                        <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="City" class="col-sm-12 col-lg-6 control-label"></label>
-                        <textarea asp-for="City" class="form-control"></textarea>
-                        <span asp-validation-for="City" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Message" class="col-sm-12 col-lg-6 control-label"></label>
-                        <textarea cols="50" rows="5" asp-for="Message" class="form-control"></textarea>
-                        <span asp-validation-for="Message" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-5">
-                        <input type="submit" class="btn btn-primary" value="Become Volunteer!"/>
-                    </div>
-                </div>
-
-
-            </form>
+<section class="my-section-mission">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="text-uppercase my-mission-text">Online Volunteer Application</h2>
+                <p>Please fill out this online application if you are interested in volunteering or community service.</p>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="volunteer-application">
+    <div class="separator">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6">
+                    <form asp-action="Index" method="post" class="form-horizontal" role="form">
+
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="col-sm-12 col-lg-6 control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="LastName" class="col-sm-12 col-lg-6 control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="col-sm-12 col-lg-6 control-label"></label>
+                            <textarea asp-for="Email" class="form-control"></textarea>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Phone" class="col-sm-12 col-lg-6 control-label"></label>
+                            <textarea asp-for="Phone" class="form-control"></textarea>
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Address" class="col-sm-12 col-lg-6 control-label"></label>
+                            <textarea asp-for="Address" class="form-control"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="City" class="col-sm-12 col-lg-6 control-label"></label>
+                            <textarea asp-for="City" class="form-control"></textarea>
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Message" class="col-sm-12 col-lg-6 control-label"></label>
+                            <textarea cols="50" rows="5" asp-for="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-5">
+                                <input type="submit" class="btn btn-primary" value="Become Volunteer!" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

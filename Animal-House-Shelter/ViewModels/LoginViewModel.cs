@@ -12,7 +12,7 @@ namespace Animal_House_Shelter.ViewModels
         public string Name { get; set; }
 
         [Required]
-        [UIHint("password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         public string ReturnUrl { get; set; } = "/";
