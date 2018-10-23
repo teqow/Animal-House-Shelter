@@ -14,7 +14,7 @@ namespace Animal_House_Shelter.Models
             _applicationDbContext = applicationDbContext;
         }
 
-        public IQueryable<Cat> Cats => _applicationDbContext.Cats;
+        public IEnumerable<Cat> Cats => _applicationDbContext.Cats;
 
         public void SaveCat(Cat cat)
         {

@@ -7,7 +7,7 @@ namespace Animal_House_Shelter.Models
 {
     public interface ICatRepository
     {
-        IQueryable<Cat> Cats { get; }
+        IEnumerable<Cat> Cats { get; }
 
         Cat GetCatByID(int catID);
 

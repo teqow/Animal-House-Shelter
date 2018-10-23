@@ -33,10 +33,10 @@ namespace Animal_House_Shelter
                 options.UseSqlServer(
                     Configuration["ConnectionStrings:DefaultConnection"]));
 
-            services.AddTransient<IDogRepository, DogRepository>();
-            services.AddTransient<ICatRepository, CatRepository>();
-            services.AddTransient<IAdoptionRepository, AdoptionRepository>();
-            services.AddTransient<IVolunteerRepository, VolunteerRepository>();
+            services.AddScoped<IDogRepository, DogRepository>();
+            services.AddScoped<ICatRepository, CatRepository>();
+            services.AddScoped<IAdoptionRepository, AdoptionRepository>();
+            services.AddScoped<IVolunteerRepository, VolunteerRepository>();
 
             services.AddDbContext<ApplicationIdentityDbContext>(options =>
                 options.UseSqlServer(Configuration["AnimalHouseShelterIdentity:DefaultConnection"]));
