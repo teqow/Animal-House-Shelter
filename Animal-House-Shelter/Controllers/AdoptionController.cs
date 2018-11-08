@@ -30,7 +30,6 @@ namespace Animal_House_Shelter.Controllers
                 return RedirectToAction("Completed");
             }
             return View(adoption);
-
         }
 
         public IActionResult Completed()
