@@ -14,7 +14,7 @@ Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstra
 * Dogs and Cats fetch from db 
 
 The home page look:
-![homepage](https://user-images.githubusercontent.com/36841282/48205502-a3dddf00-e36c-11e8-8cf1-9e8d0bfde803.png)
+![homepage](https://user-images.githubusercontent.com/36841282/48206653-31223300-e36f-11e8-984b-00b0676232c9.png)
 
 ## How To Run
 * Download repo
