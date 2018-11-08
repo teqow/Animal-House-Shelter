@@ -16,5 +16,5 @@ Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstra
 - Contact view with EmailSender
 - Dogs and Cats from db 
 
-Display front page:
+The home page look:
 ![homepage](https://user-images.githubusercontent.com/36841282/48204329-d2a68600-e369-11e8-8d57-9ce68f4e6f9c.png)
