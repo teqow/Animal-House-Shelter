@@ -7,8 +7,7 @@ namespace Animal_House_Shelter.Infrastructure
 {
     public class Pager
     {
-        //test for 2 pagesize
-        public Pager(int totalItems, int? page, int pageSize = 2)
+        public Pager(int totalItems, int? page, int pageSize = 10)
         {
             // calculate total, start and end pages
             var totalPages = (int)Math.Ceiling((decimal)totalItems / (decimal)pageSize);

@@ -21,9 +21,12 @@
     <section class="my-section-text">
         <div class="container my-4">
             <div class="row">
-                <div class="col-lg-2">
-                    <h2>ASDAS</h2>
-                    <h3>asdsadasdsadasd</h3>
+                <div class="col-lg-6 mx-auto">
+                    <h3 class="my-mission-text text-center">Save a Life</h3>
+                    <p class="text-center">Make your life happier, more fun, & filled with love by adopting a cat.</p>
+                </div>
+                <div class="col-lg-6 mx-auto text-center">
+                    <p>Every day, our no-kill shelter receives cats that have run out of time at high kill facilities due to lack of space and we find them a forever home. Browse for your next kitty below!</p>
                 </div>
             </div>
         </div>
@@ -39,13 +42,13 @@
                 @:<div class="row">
                 }
 
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-4">
                     <div class="thumbnail text-center">
                         <h3>
                             <a asp-controller="Cats" asp-action="Details" asp-route-id="@item.CatID">@item.Name</a>
                         </h3>
                         <h3>
-                            <img src="@item.ImgUrl" style=" display: block;" />
+                            <img src="@item.ImgUrl" style=" display: block;" height="400" width="450"/>
                         </h3>
                     </div>
                 </div>

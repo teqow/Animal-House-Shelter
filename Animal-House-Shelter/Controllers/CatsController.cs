@@ -18,7 +18,6 @@ namespace Animal_House_Shelter.Controllers
             _catRepository = catRepository;
         }
 
-
         public IActionResult List(int? page)
         {
             var catsItems = _catRepository.Cats.ToList();
@@ -38,7 +37,6 @@ namespace Animal_House_Shelter.Controllers
             var cat = _catRepository.GetCatByID(id);
             if (cat == null)
                 return NotFound();
-
 
             return View(cat);
         }

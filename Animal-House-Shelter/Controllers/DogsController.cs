@@ -39,7 +39,6 @@ namespace Animal_House_Shelter.Controllers
             if (dog == null)
                 return NotFound();
 
-
             return View(dog);
         }
     }

@@ -17,39 +17,47 @@
             </div>
         </div>
     </section>
+
     <section class="my-section-text">
         <div class="container my-4">
             <div class="row">
-                <div class="col-lg-2">
-                    <h2>ASDAS</h2>
-                    <h3>asdsadasdsadasd</h3>
+                <div class="col-lg-6 mx-auto">
+                    <h3 class="my-mission-text text-center">Save a Life</h3>
+                    <p class="text-center">Fill your home with unconditional love by adopting a dog.</p>
+                </div>
+                <div class="col-lg-6 mx-auto text-center">
+                    <p>Every day, our no-kill shelter receives dogs that have run out of time at high kill facilities due to lack of space and we find them a forever home. Browse for your next puppy below!</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="my-section-list-dogs">
-        <div class="row">
-            @foreach (var item in Model.Dogs)
-            {
-                if (counter != 0 && counter % 3 == 0)
-                {
-                @:</div>
-                @:<div class="row">
-                }
 
-                <div class="col-md-4">
-                    <div class="thumbnail text-center">
-                        <h3>
-                            <a asp-controller="Dogs" asp-action="Details" asp-route-id="@item.DogID">@item.Name</a>
-                        </h3>
-                        <h3>
-                            <img src="@item.ImgUrl" style=" display: block;" />
-                        </h3>
+    <section class="my-section-list-dogs">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var item in Model.Dogs)
+                {
+                    if (counter != 0 && counter % 3 == 0)
+                    {
+                    @:</div>
+                    @:<div class="row">
+                    }
+
+                    <div class="col-lg-4 mx-auto">
+                        <div class="text-center">
+                            <h3>
+                                <a asp-controller="Dogs" asp-action="Details" asp-route-id="@item.DogID">@item.Name</a>
+                            </h3>
+                            <h3>
+                                <img src="@item.ImgUrl" style=" display: block;" height="400" width="450" />
+                            </h3>
+                        </div>
                     </div>
-                </div>
-                counter++;
-            }
+                    counter++;
+                }
+            </div>
         </div>
+
     </section>
 
     <section class="my-section-list-dogs-paging">
