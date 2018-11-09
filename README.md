@@ -1,7 +1,7 @@
 # Animal-House-Shelter
 
 ## General Info:
-Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstrap, Jquery.
+Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstrap, HTML5, CSS, Jquery.
 
 ## Done List:
 * Add Controllers/Models/Views/DB

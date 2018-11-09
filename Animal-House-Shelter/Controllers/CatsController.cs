@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Animal_House_Shelter.Infrastructure;
 using Animal_House_Shelter.Models;
 using Animal_House_Shelter.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +19,15 @@ namespace Animal_House_Shelter.Controllers
         }
 
 
-        public IActionResult List()
+        public IActionResult List(int? page)
         {
-            var cats = _catRepository.Cats.OrderBy(c => c.Name);
+            var catsItems = _catRepository.Cats.ToList();
+            var pager = new Pager(catsItems.Count(), page);
 
             var catsViewModel = new CatsViewModel
             {
-                Cats = cats.ToList()
+                Cats = catsItems.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+                Pager = pager
             };
 
             return View(catsViewModel);

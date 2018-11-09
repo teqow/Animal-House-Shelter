@@ -53,5 +53,40 @@
             }
         </div>
     </section>
+
+    <section class="my-section-list-cats-paging">
+        <div class="container">
+            <div class="mx-auto">
+                @if (Model.Pager.EndPage > 1)
+                {
+                    <ul class="pagination">
+                        @if (Model.Pager.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="~/Cats/List">First Page</a>
+                                <p></p>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="~/Cats/List?page=@(Model.Pager.CurrentPage - 1)">Previous Page</a>
+                                <p></p>
+                            </li>
+                        }
+
+                        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="~/Cats/List?page=@(Model.Pager.CurrentPage + 1)">Next Page</a>
+                                <p></p>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="~/Cats/List?page=@(Model.Pager.TotalPages)">Last Page</a>
+                                <p></p>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </section>
 </body>
 </html>

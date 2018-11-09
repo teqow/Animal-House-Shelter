@@ -13,25 +13,25 @@ namespace Animal_House_Shelter.Controllers
     public class DogsController : Controller
     {
         private readonly IDogRepository _dogRepository;
-        public int PageSize = 4;
 
         public DogsController(IDogRepository dogRepository)
         {
             _dogRepository = dogRepository;
         }
 
-        public IActionResult List(int dogsPage = 1)
-            => View(new DogsViewModel
-            {
-                Dogs = _dogRepository.Dogs.OrderBy(d => d.DogID).Skip((dogsPage - 1) * PageSize).Take(PageSize),
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = dogsPage,
-                    ItemsPerPage = PageSize,
-                    TotalItems = _dogRepository.Dogs.Count()
-                }
-            });
+        public IActionResult List(int? page)
+        {
+            var dogsItems = _dogRepository.Dogs.ToList();
+            var pager = new Pager(dogsItems.Count(), page);
 
+            var dogsViewModel = new DogsViewModel
+            {
+                Dogs = dogsItems.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+                Pager = pager
+            };
+
+            return View(dogsViewModel);
+        }
 
         public IActionResult Details(int id)
         {

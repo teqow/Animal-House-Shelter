@@ -10,48 +10,82 @@
     <link rel="stylesheet" href="~/lib/css/style.css">
 </head>
 <body>
-<section class="my-section-jumbotron-dogs">
-    <div class="jumbotron jumbotron-fluid my-jumbotron-dogs d-flex align-items-center">
-        <div class="container text-center ">
-            <h1 class="display-4 text-uppercase my-jumbotron-text my-4">Adopt or Foster a Dog or Puppy </h1>
-        </div>
-    </div>
-</section>
-<section class="my-section-text">
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-lg-2">
-                <h2>ASDAS</h2>
-                <h3>asdsadasdsadasd</h3>
+    <section class="my-section-jumbotron-dogs">
+        <div class="jumbotron jumbotron-fluid my-jumbotron-dogs d-flex align-items-center">
+            <div class="container text-center ">
+                <h1 class="display-4 text-uppercase my-jumbotron-text my-4">Adopt or Foster a Dog or Puppy </h1>
             </div>
         </div>
-    </div>
-</section>
-<section class="my-section-list-dogs">
-    <div class="row">
-        @foreach (var item in Model.Dogs)
-        {
-            if (counter != 0 && counter % 3 == 0)
-            {
-                @:</div>
-                @:<div class="row">
-            }
-
-            <div class="col-md-4">
-                <div class="thumbnail text-center">
-                    <h3>
-                        <a asp-controller="Dogs" asp-action="Details" asp-route-id="@item.DogID">@item.Name</a>
-                    </h3>
-                    <h3>
-                        <img src="@item.ImgUrl" style=" display: block;" />
-                    </h3>
+    </section>
+    <section class="my-section-text">
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-lg-2">
+                    <h2>ASDAS</h2>
+                    <h3>asdsadasdsadasd</h3>
                 </div>
             </div>
-            counter++;
-        }
-    </div>
-</section>
+        </div>
+    </section>
+    <section class="my-section-list-dogs">
+        <div class="row">
+            @foreach (var item in Model.Dogs)
+            {
+                if (counter != 0 && counter % 3 == 0)
+                {
+                @:</div>
+                @:<div class="row">
+                }
 
-<div page-model="@Model.PagingInfo" page-action="List"></div>
+                <div class="col-md-4">
+                    <div class="thumbnail text-center">
+                        <h3>
+                            <a asp-controller="Dogs" asp-action="Details" asp-route-id="@item.DogID">@item.Name</a>
+                        </h3>
+                        <h3>
+                            <img src="@item.ImgUrl" style=" display: block;" />
+                        </h3>
+                    </div>
+                </div>
+                counter++;
+            }
+        </div>
+    </section>
+
+    <section class="my-section-list-dogs-paging">
+        <div class="container">
+            <div class="mx-auto">
+                @if (Model.Pager.EndPage > 1)
+                {
+                    <ul class="pagination">
+                        @if (Model.Pager.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="~/Dogs/List">First Page</a>
+                                <p></p>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="~/Dogs/List?page=@(Model.Pager.CurrentPage - 1)">Previous Page</a>
+                                <p></p>
+                            </li>
+                        }
+
+                        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="~/Dogs/List?page=@(Model.Pager.CurrentPage + 1)">Next Page</a>
+                                <p></p>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="~/Dogs/List?page=@(Model.Pager.TotalPages)">Last Page</a>
+                                <p></p>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
