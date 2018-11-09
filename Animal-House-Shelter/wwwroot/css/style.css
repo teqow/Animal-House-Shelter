@@ -1,0 +1,97 @@
+﻿
+.my-jumbotron {
+    background-image: url(https://i0.wp.com/www.wallpapersbyte.com/wp-content/uploads/2015/07/Sad-Dog-Face-Muzzle-Pedigreed-Feed-WallpapersByte-com-1366x768.jpg?ssl=1);
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    overflow-x: hidden;
+}
+
+.my-jumbotron-text {
+    font-weight: bold;
+    color: #ff0000;
+    letter-spacing: 0.35rem;
+}
+
+.button1 {
+    border-radius: 50%;
+    width: 200px;
+    height: 75px;
+}
+
+.my-jumbotron-dogs {
+    background-image: url(https://i0.wp.com/www.wallpapersbyte.com/wp-content/uploads/2015/07/Sad-Dog-Face-Muzzle-Pedigreed-Feed-WallpapersByte-com-1366x768.jpg?ssl=1);
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    overflow-x: hidden;
+}
+
+.my-jumbotron-cats {
+    background-image: url(https://news.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt.1900.1.jpg);
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    overflow-x: hidden;
+}
+
+.separator {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.separator::before, .separator::after {
+        content: '';
+        position: absolute;
+ }
+
+.separator::before {
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #6f42c1;
+        transform-origin: 100% 100%;
+        transform: rotate(-1deg);
+ }
+
+.my-mission-text::after {
+    content: '';
+    display: block;
+    border: 1px solid #ffc107;
+    width: 500px;
+    margin: 30px auto;
+}
+
+.my-mission-background-icon {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ffc107;
+    border-radius: 50%;
+    padding: 0.4rem;
+    position: relative;
+}
+
+.my-mission-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 2rem;
+    color: #ffc107;
+}
+
+.h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
