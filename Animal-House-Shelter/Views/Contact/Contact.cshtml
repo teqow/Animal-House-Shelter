@@ -11,31 +11,37 @@
     </div>
 </section>
 
+<div class="container">
+    <p></p>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <form asp-controller="Contact" asp-action="Contact" method="post">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName"></label>
+                    <input type="text" asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input type="text" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" />
+                </div>
 
-<form asp-controller="Contact" asp-action="Contact" method="post">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input type="text" asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" />
+                <div class="form-group">
+                    <label asp-for="Message"></label>
+                    <textarea asp-for="Message" class="form-control"></textarea>
+                    <span asp-validation-for="Message" />
+                </div>
+                <div class="form-group">
+                    <div asp-validation-summary="All"></div>
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-send"></i> Send</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="LastName"></label>
-        <input type="text" asp-for="LastName" class="form-control" />
-        <span asp-validation-for="LastName" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input type="text" asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" />
-    </div>
-  
-    <div class="form-group">
-        <label asp-for="Message"></label>
-        <textarea asp-for="Message" class="form-control"></textarea>
-        <span asp-validation-for="Message" />
-    </div>
-    <div class="form-group">
-        <div asp-validation-summary="All"></div>
-        <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-send"></i> Send</button>
-    </div>
-</form>
+</div>
