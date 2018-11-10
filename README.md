@@ -5,8 +5,8 @@ Animal-House-Shelter for dogs and cats. Using ASP.Net Core 2.1 MVC, EF, Bootstra
 
 ## Done List:
 * Add Controllers/Models/Views/DB
-* Identity
-* Administration - add/edit/delete dogs and cats in my db
+* Identity for administration panel
+* Administration panel - add/edit/delete dogs and cats in my db
 * Generating a Report about status shelter via Rotativa 
 * Volunteer application form
 * Adoption application form
@@ -24,3 +24,5 @@ The home page look:
 
 ## TODO:
 * Correct front, more functionality.
+
+In a few days - upload photos from administration panel.
