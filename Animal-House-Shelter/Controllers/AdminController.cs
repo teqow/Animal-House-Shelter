@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Animal_House_Shelter.Infrastructure;
 using Animal_House_Shelter.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Animal_House_Shelter.Controllers
@@ -48,10 +49,17 @@ namespace Animal_House_Shelter.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditDogs(Dog dog)
+        public IActionResult EditDogs(Dog dog, IFormFile Image)
         {
             if (ModelState.IsValid)
             {
+                //using (var stream = new MemoryStream())
+                //{
+                //    Image.CopyTo(stream);
+                //    var imageToBeUploadedByteArray = stream.ToArray();
+                //    dog.Image = imageToBeUploadedByteArray;
+                //}
+
                 _dogRepository.SaveDog(dog);
                 TempData["message"] = $"Save {dog.Name}.";
                 return RedirectToAction("DogsList");
@@ -77,6 +85,7 @@ namespace Animal_House_Shelter.Controllers
             }
 
             return RedirectToAction("DogsList");
+
         }
 
         //Cats

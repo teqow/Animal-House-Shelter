@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,7 +27,8 @@ namespace Animal_House_Shelter.Models
             else
             {
                 Dog dbEntry = _applicationDbContext.Dogs.FirstOrDefault(d => d.DogID == dog.DogID);
-                if(dbEntry != null)
+          
+                if (dbEntry != null)
                 {
                     dbEntry.Age = dog.Age;
                     dbEntry.Breed = dog.Breed;
@@ -34,6 +37,7 @@ namespace Animal_House_Shelter.Models
                     dbEntry.Name = dog.Name;
                     dbEntry.Weight = dog.Weight;
                     dbEntry.ImgUrl = dog.ImgUrl;
+                    dbEntry.Image = dog.Image;
                 }
             }
 

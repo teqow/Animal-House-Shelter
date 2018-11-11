@@ -18,5 +18,8 @@ namespace Animal_House_Shelter.Models
         public string Gender { get; set; }
         public string Description { get; set; }
         public string ImgUrl { get; set; }
+
+        //To upload photo from administration panel
+        public byte[] Image { get; set; }
     }
 }
