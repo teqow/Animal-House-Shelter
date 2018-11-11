@@ -25,4 +25,3 @@ The home page look:
 ## TODO:
 * Correct front, more functionality.
 
-In a few days - upload photos from administration panel.
