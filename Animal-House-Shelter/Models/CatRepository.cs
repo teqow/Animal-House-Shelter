@@ -36,15 +36,15 @@ namespace Animal_House_Shelter.Models
                     dbEntry.ImgUrl = cat.ImgUrl;
                 }
             }
-
             _applicationDbContext.SaveChanges();
         }
 
         public Cat DeleteCat(int catID)
         {
             Cat dbEntry = _applicationDbContext.Cats.FirstOrDefault(c => c.CatID == catID);
+            if (dbEntry != null)
             {
-                _applicationDbContext.Cats.Remove(dbEntry);
+                _applicationDbContext.Remove(dbEntry);
                 _applicationDbContext.SaveChanges();
             }
 

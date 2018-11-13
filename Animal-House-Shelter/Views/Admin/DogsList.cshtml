@@ -4,6 +4,9 @@
     Layout = "_AdminLayout";
 }
 
+<div class="text-center">
+    <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Generate Report" onclick="window.location = '@Url.Action("DogsReport", "Report")'" />
+</div>
 <div class="container">
     <p></p>
     <div class="row">
@@ -28,6 +31,7 @@
                                    asp-route-productId="@item.DogID">
                                     Edit
                                 </a>
+                                <a asp-action="CreateDogs" class="btn btn-primary btn-sm">Add new Dog</a>
                                 <input type="hidden" name="DogID" value="@item.DogID" />
                                 <button type="submit" class="btn btn-danger btn-sm">
                                     Delete
@@ -37,11 +41,6 @@
                     </tr>
                 }
             </table>
-
-            <div class="text-center">
-                <a asp-action="CreateDogs" class="btn btn-primary">Add new Dog</a>
-                <input type="button" class="btn button1 btn-lg btn-warning my-2" value="Generate Report about Dogs" onclick="window.location = '@Url.Action("DogsReport", "Report")'" />
-            </div>
         </div>
     </div>
 </div>

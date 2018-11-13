@@ -27,7 +27,6 @@ namespace Animal_House_Shelter.Models
             else
             {
                 Dog dbEntry = _applicationDbContext.Dogs.FirstOrDefault(d => d.DogID == dog.DogID);
-          
                 if (dbEntry != null)
                 {
                     dbEntry.Age = dog.Age;
@@ -40,7 +39,6 @@ namespace Animal_House_Shelter.Models
                     dbEntry.Image = dog.Image;
                 }
             }
-
             _applicationDbContext.SaveChanges();
         }
 

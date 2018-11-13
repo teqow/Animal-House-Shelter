@@ -12,33 +12,33 @@
 <body>
     <div class="container">
         <h2>Dogs List</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>DogID</th>
-                    <th>Name</th>
-                    <th>Breed</th>
-                    <th>Age</th>
-                    <th>Weight</th>
-                    <th>Gender</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @foreach (var item in Model)
-                {
+            <table class="table table-borderless">
+                <thead>
                     <tr>
-                        <td>@item.DogID</td>
-                        <td>@item.Name</td>
-                        <td>@item.Breed</td>
-                        <td>@item.Age</td>
-                        <td>@item.Weight</td>
-                        <td>@item.Gender</td>
+                        <th>DogID</th>
+                        <th>Name</th>
+                        <th>Breed</th>
+                        <th>Age</th>
+                        <th>Weight</th>
+                        <th>Gender</th>
                     </tr>
-                }
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
-    </div>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.DogID</td>
+                            <td>@item.Name</td>
+                            <td>@item.Breed</td>
+                            <td>@item.Age</td>
+                            <td>@item.Weight</td>
+                            <td>@item.Gender</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
 </body>
 </html> 
