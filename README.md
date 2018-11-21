@@ -23,5 +23,5 @@ The home page look:
 * Run the application.
 
 ## TODO:
-* Correct front, more functionality.
+* Tests(smoke?), more functionality.
 
